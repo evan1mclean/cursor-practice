@@ -26,20 +26,16 @@ export const DateHeader = () => {
   const totalTasks = todos.length;
 
   return (
-    <header className="mb-8">
-      <div className="flex justify-between items-start">
-        <div>
-          <h1 className="text-4xl font-semibold text-gray-800">
-            {dayName}, {formattedDay}
-          </h1>
-          <h2 className="text-xl text-gray-500 mt-1">
-            {month}
-          </h2>
-        </div>
-        <div className="text-gray-500">
+    <div>
+      <div className="flex justify-between items-center mb-1">
+        <h1 className="text-2xl font-semibold text-gray-800">
+          {dayName}, <span className="text-gray-700">{formattedDay}</span>
+        </h1>
+        <span className="text-gray-500">
           {totalTasks} Task{totalTasks !== 1 ? 's' : ''}
-        </div>
+        </span>
       </div>
-    </header>
+      <h2 className="text-lg text-gray-500 font-normal">{month}</h2>
+    </div>
   );
 }; 

@@ -10,7 +10,7 @@ export const AddTodoButton = () => {
     <>
       <button
         onClick={() => setIsModalOpen(true)}
-        className="add-button hover:scale-105 active:scale-95 transition-transform"
+        className="bg-red-500 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg shadow-red-400/30 hover:scale-105 active:scale-95 transition-transform"
         aria-label="Add new todo"
       >
         <svg

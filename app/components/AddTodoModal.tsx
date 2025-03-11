@@ -33,8 +33,8 @@ export const AddTodoModal = ({ isOpen, onClose }: AddTodoModalProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl p-6 w-full max-w-md">
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+      <div className="bg-white rounded-2xl p-6 w-full max-w-md shadow-xl">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Add New Task</h2>
         
         <form onSubmit={handleSubmit}>
@@ -48,7 +48,7 @@ export const AddTodoModal = ({ isOpen, onClose }: AddTodoModalProps) => {
               type="text"
               value={text}
               onChange={(e) => setText(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
               placeholder="What needs to be done?"
             />
           </div>
@@ -62,7 +62,7 @@ export const AddTodoModal = ({ isOpen, onClose }: AddTodoModalProps) => {
               type="text"
               value={time}
               onChange={(e) => setTime(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
               placeholder="e.g., 3:00 PM"
             />
           </div>
@@ -77,7 +77,7 @@ export const AddTodoModal = ({ isOpen, onClose }: AddTodoModalProps) => {
             </button>
             <button
               type="submit"
-              className="px-4 py-2 bg-[var(--accent-color)] text-white rounded-lg hover:opacity-90 transition-opacity"
+              className="px-4 py-2 bg-red-500 text-white rounded-lg hover:opacity-90 transition-opacity"
             >
               Add Task
             </button>
