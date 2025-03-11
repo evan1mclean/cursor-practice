@@ -1,0 +1,65 @@
+# Spacing System
+
+This document outlines the spacing system used in the Todo List application.
+
+## Spacing Scale
+
+The application uses a consistent spacing scale based on multiples of 4px (0.25rem):
+
+| Token | Value    | Pixels | Description                       |
+|-------|----------|--------|-----------------------------------|
+| 0     | 0        | 0px    | No spacing                        |
+| 1     | 0.25rem  | 4px    | Extra small spacing              |
+| 2     | 0.5rem   | 8px    | Small spacing                     |
+| 3     | 0.75rem  | 12px   | Medium-small spacing             |
+| 4     | 1rem     | 16px   | Base spacing                      |
+| 5     | 1.25rem  | 20px   | Medium spacing                    |
+| 6     | 1.5rem   | 24px   | Medium-large spacing             |
+| 8     | 2rem     | 32px   | Large spacing                     |
+| 10    | 2.5rem   | 40px   | Extra large spacing              |
+| 12    | 3rem     | 48px   | 2x large spacing                 |
+| 16    | 4rem     | 64px   | 3x large spacing                 |
+| 20    | 5rem     | 80px   | 4x large spacing                 |
+| 24    | 6rem     | 96px   | 5x large spacing                 |
+| 32    | 8rem     | 128px  | 6x large spacing                 |
+
+## Component-Specific Spacing
+
+In addition to the base spacing scale, we have defined component-specific spacing tokens:
+
+| Token      | Value    | Pixels | Description                       |
+|------------|----------|--------|-----------------------------------|
+| card       | 1.5rem   | 24px   | Standard card padding/margin/gap  |
+| item       | 0.75rem  | 12px   | Standard item padding/margin/gap  |
+
+## Usage Guidelines
+
+### Layout Spacing
+
+- **Page Padding**: Use `p-6` (1.5rem/24px) for the main page padding
+- **Card Padding**: Use `p-card` (1.5rem/24px) for card internal padding
+- **Card Margin**: Use `m-card` (1.5rem/24px) for spacing between cards
+- **Card Border Radius**: Use `rounded-xl` for card corners
+
+### Component Spacing
+
+- **Between Tasks**: Use `gap-3` (0.75rem/12px) for spacing between task items
+- **Task Item Padding**: Use `py-3` (0.75rem/12px) for vertical padding in task items
+- **Checkbox to Text**: Use `ml-3` (0.75rem/12px) for spacing between checkbox and task text
+- **Text to Time**: Use `ml-2` (0.5rem/8px) for spacing between task text and time
+
+### Section Spacing
+
+- **Header to Content**: Use `mt-6` (1.5rem/24px) for spacing between header and content
+- **Between Sections**: Use `my-8` (2rem/32px) for spacing between major sections
+
+## Responsive Considerations
+
+- Maintain consistent spacing across different screen sizes
+- For very small screens (< 375px), consider reducing card padding to `p-4` (1rem/16px)
+- For larger screens, maintain the same spacing to preserve design consistency
+
+## Accessibility
+
+- Ensure sufficient spacing between interactive elements (minimum 8px/0.5rem)
+- Maintain adequate padding on interactive elements for touch targets (minimum 44px × 44px) 
