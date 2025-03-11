@@ -10,29 +10,29 @@ This guide outlines the step-by-step process for building a Todo List applicatio
 
 ## State Management
 
-- [ ] 4. Create `TodoContext.tsx` for state management
-- [ ] 5. Implement the following functions:
-  - [ ] a. `addTodo`: Add a new todo item
-  - [ ] b. `toggleTodo`: Mark a todo as complete/incomplete
-  - [ ] c. `deleteTodo`: Remove a todo item
-- [ ] 6. Set up localStorage for data persistence
+- [x] 4. Create `TodoContext.tsx` for state management
+- [x] 5. Implement the following functions:
+  - [x] a. `addTodo`: Add a new todo item
+  - [x] b. `toggleTodo`: Mark a todo as complete/incomplete
+  - [x] c. `deleteTodo`: Remove a todo item
+- [x] 6. Set up localStorage for data persistence
 
 ## Component Development
 
-- [ ] 7. Create `DateHeader.tsx` component
-  - [ ] a. Display current day and date
-  - [ ] b. Show total number of tasks
-- [ ] 8. Create `TodoItem.tsx` component
-  - [ ] a. Display todo text
-  - [ ] b. Show time (if provided)
-  - [ ] c. Implement checkbox for completion status
-  - [ ] d. Add strikethrough styling for completed items
-- [ ] 9. Create `AddTodoButton.tsx` component
-  - [ ] a. Design circular add button with plus icon
-  - [ ] b. Implement modal or form for adding new todos
-- [ ] 10. Create `TodoList.tsx` component
-  - [ ] a. Render list of TodoItem components
-  - [ ] b. Handle empty state
+- [x] 7. Create `DateHeader.tsx` component
+  - [x] a. Display current day and date
+  - [x] b. Show total number of tasks
+- [x] 8. Create `TodoItem.tsx` component
+  - [x] a. Display todo text
+  - [x] b. Show time (if provided)
+  - [x] c. Implement checkbox for completion status
+  - [x] d. Add strikethrough styling for completed items
+- [x] 9. Create `AddTodoButton.tsx` component
+  - [x] a. Design circular add button with plus icon
+  - [x] b. Implement modal or form for adding new todos
+- [x] 10. Create `TodoList.tsx` component
+  - [x] a. Render list of TodoItem components
+  - [x] b. Handle empty state
 
 ## Main Page Implementation
 
