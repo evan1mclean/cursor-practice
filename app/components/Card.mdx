@@ -1,0 +1,92 @@
+# Card Component
+
+The `Card` component provides a container with proper padding, rounded corners, and shadow effect. It can be used with or without a header section.
+
+## Usage
+
+### Basic Card
+
+```tsx
+import { Card } from './components/Card';
+
+<Card>
+  <p>This is a simple card with default padding.</p>
+</Card>
+```
+
+### Card with Header
+
+```tsx
+import { Card, CardHeader, CardContent } from './components/Card';
+
+<Card hasHeader>
+  <CardHeader>
+    <h2 className="text-xl font-semibold">Card Header</h2>
+  </CardHeader>
+  <CardContent>
+    <p>This is a card with a header section.</p>
+  </CardContent>
+</Card>
+```
+
+## Components
+
+### Card
+
+#### Props
+
+| Prop       | Type            | Default | Description                                |
+|------------|----------------|--------|--------------------------------------------|
+| children   | React.ReactNode | -      | The content to be rendered inside the card |
+| className  | string         | ''     | Additional CSS classes to apply to the card |
+| hasHeader  | boolean        | false  | Whether the card has a header section       |
+
+### CardHeader
+
+#### Props
+
+| Prop       | Type            | Default | Description                                |
+|------------|----------------|--------|--------------------------------------------|
+| children   | React.ReactNode | -      | The content to be rendered inside the header |
+| className  | string         | ''     | Additional CSS classes to apply to the header |
+
+### CardContent
+
+#### Props
+
+| Prop       | Type            | Default | Description                                |
+|------------|----------------|--------|--------------------------------------------|
+| children   | React.ReactNode | -      | The content to be rendered inside the content area |
+| className  | string         | ''     | Additional CSS classes to apply to the content area |
+
+## Styling
+
+The component uses the following Tailwind CSS classes:
+
+- `bg-white`: White background color
+- `rounded-xl`: Rounded corners (0.75rem radius)
+- `shadow-card`: Card shadow effect
+- `p-card`: Standard card padding (1.5rem/24px)
+- `overflow-hidden`: Applied when the card has a header to prevent border-radius issues
+
+## Variations
+
+### Default Card
+
+A simple card with padding and shadow.
+
+### Card with Header
+
+A card with a separate header section, divided by a border.
+
+### Custom Styling
+
+The card can be customized with additional classes via the `className` prop.
+
+## Accessibility
+
+The card component is designed to be accessible, with:
+
+- Proper spacing for readability
+- Sufficient color contrast
+- Semantic structure when used with appropriate heading levels 
