@@ -1,0 +1,51 @@
+# AppLayout Component
+
+The `AppLayout` component provides the main layout structure for the Todo List application. It includes a gradient background and a responsive container for the todo card.
+
+## Usage
+
+```tsx
+import { AppLayout } from './components/AppLayout';
+
+export default function Home() {
+  return (
+    <AppLayout>
+      <div className="bg-white rounded-xl shadow-card p-card">
+        {/* Your content here */}
+      </div>
+    </AppLayout>
+  );
+}
+```
+
+## Props
+
+| Prop      | Type            | Description                                |
+|-----------|----------------|--------------------------------------------|
+| children  | React.ReactNode | The content to be rendered inside the layout |
+
+## Features
+
+- **Gradient Background**: Uses the primary gradient defined in the design system
+- **Responsive Container**: Adapts to different screen sizes with appropriate padding
+- **Centered Content**: Centers the content both horizontally and vertically
+- **Maximum Width**: Limits the content width to maintain readability
+
+## Styling
+
+The component uses the following Tailwind CSS classes:
+
+- `min-h-screen`: Ensures the layout takes at least the full height of the viewport
+- `w-full`: Makes the layout take the full width of the viewport
+- `bg-gradient-primary`: Applies the primary gradient background
+- `flex items-center justify-center`: Centers the content both horizontally and vertically
+- `p-4 sm:p-6`: Applies responsive padding (16px on mobile, 24px on larger screens)
+- `w-full max-w-md`: Makes the content container take the full width up to a maximum of 448px
+
+## Accessibility
+
+The layout is designed to be accessible, with:
+
+- Sufficient color contrast between the background and content
+- Responsive design that works on various screen sizes
+- Proper spacing for readability 
