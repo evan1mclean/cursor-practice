@@ -5,23 +5,19 @@ import React from 'react';
 interface CardProps {
   children: React.ReactNode;
   className?: string;
-  hasHeader?: boolean;
 }
 
 /**
  * Card component provides a container with proper padding, rounded corners, and shadow.
- * It can be configured with or without a header section.
+ * It can be used with CardHeader and CardContent components for structured content.
  */
 export const Card: React.FC<CardProps> = ({ 
   children, 
-  className = '',
-  hasHeader = false
+  className = ''
 }) => {
   return (
     <div 
-      className={`bg-white rounded-xl shadow-card ${
-        hasHeader ? 'overflow-hidden' : 'p-card'
-      } ${className}`}
+      className={`bg-white rounded-[1.25rem] shadow-card p-6 ${className}`}
     >
       {children}
     </div>
@@ -36,7 +32,7 @@ export const CardHeader: React.FC<{ children: React.ReactNode; className?: strin
   className = '' 
 }) => {
   return (
-    <div className={`p-card border-b border-gray-200 ${className}`}>
+    <div className={`border-b border-gray-100 ${className}`}>
       {children}
     </div>
   );
@@ -50,7 +46,7 @@ export const CardContent: React.FC<{ children: React.ReactNode; className?: stri
   className = '' 
 }) => {
   return (
-    <div className={`p-card ${className}`}>
+    <div className={`${className}`}>
       {children}
     </div>
   );
