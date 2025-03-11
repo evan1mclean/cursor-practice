@@ -1,0 +1,60 @@
+# Shadows and Elevation System
+
+This document outlines the shadows and elevation system used in the Todo List application.
+
+## Shadow Styles
+
+The application uses a consistent shadow system to create depth and hierarchy:
+
+| Token         | CSS Value                                                                                      | Description                                |
+|---------------|------------------------------------------------------------------------------------------------|--------------------------------------------|
+| card          | `0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)`                     | Used for the main card container           |
+| button        | `0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)`                       | Used for buttons in default state          |
+| button-hover  | `0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)`                     | Used for buttons in hover state            |
+| button-active | `0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06)`                       | Used for buttons in active/pressed state   |
+| checkbox      | `0 1px 2px 0 rgba(0, 0, 0, 0.05)`                                                              | Used for checkbox elements                 |
+
+## Elevation Levels
+
+The application uses different elevation levels to create a visual hierarchy:
+
+| Level | Component                   | Shadow Token    | Description                                           |
+|-------|----------------------------|-----------------|-------------------------------------------------------|
+| 0     | Background                 | none            | Base level, no elevation                              |
+| 1     | Card                       | shadow-card     | Main content container, elevated from background      |
+| 2     | Checkbox                   | shadow-checkbox | Interactive elements within the card                  |
+| 3     | Add Button                 | shadow-button   | Floating action button, highest elevation             |
+
+## Usage Guidelines
+
+### Card Shadow
+
+- Apply `shadow-card` to the main card container
+- Combine with `bg-white` and `rounded-xl` for the complete card styling
+- Example: `<div className="bg-white rounded-xl shadow-card p-card">...</div>`
+
+### Button Shadow
+
+- Apply `shadow-button` to the add task button
+- Use `shadow-button-hover` on hover state
+- Use `shadow-button-active` on active/pressed state
+- Example: 
+  ```jsx
+  <button 
+    className="bg-secondary rounded-full p-3 shadow-button 
+    hover:shadow-button-hover active:shadow-button-active"
+  >
+    +
+  </button>
+  ```
+
+### Checkbox Shadow
+
+- Apply `shadow-checkbox` to custom checkbox elements
+- Example: `<div className="w-5 h-5 rounded-full border-2 shadow-checkbox">...</div>`
+
+## Accessibility Considerations
+
+- Ensure sufficient contrast between elements with different elevation levels
+- Don't rely solely on shadows to convey information or state
+- Use appropriate ARIA attributes for interactive elements 
