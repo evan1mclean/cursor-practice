@@ -1,0 +1,57 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/blocks';
+import * as TaskCountHeaderStories from '../../stories/TaskCountHeader.stories';
+
+<Meta of={TaskCountHeaderStories} />
+
+# TaskCountHeader Component
+
+The TaskCountHeader component displays the number of tasks with proper pluralization.
+
+## Overview
+
+The TaskCountHeader component is a simple component that shows the total number of tasks. It automatically handles pluralization based on the count (e.g., "1 Task" vs "2 Tasks").
+
+This component is typically used in conjunction with the DateHeader or as a standalone element to provide context about the number of tasks.
+
+## Examples
+
+### No Tasks
+
+<Canvas of={TaskCountHeaderStories.NoTasks} />
+
+### Single Task
+
+<Canvas of={TaskCountHeaderStories.SingleTask} />
+
+### Multiple Tasks
+
+<Canvas of={TaskCountHeaderStories.MultipleTasks} />
+
+### Many Tasks
+
+<Canvas of={TaskCountHeaderStories.ManyTasks} />
+
+## Props
+
+<Controls />
+
+## Usage
+
+```tsx
+import { TaskCountHeader } from './components/TaskCountHeader';
+
+// Basic usage
+<TaskCountHeader count={12} />
+
+// With additional className
+<TaskCountHeader 
+  count={5} 
+  className="text-primary-500 font-bold" 
+/>
+```
+
+## Design Considerations
+
+- The component uses a medium-sized font with a gray color to provide visual hierarchy
+- The text automatically adjusts between singular and plural forms based on the count
+- The component can be customized with additional classes for different styling needs 

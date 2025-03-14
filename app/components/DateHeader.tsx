@@ -1,15 +1,31 @@
 'use client';
 
-import { useTodo } from '../context/TodoContext';
+import React from 'react';
+import { TaskCountHeader } from './TaskCountHeader';
 
-export const DateHeader = () => {
-  const { todos } = useTodo();
-  const today = new Date();
+interface DateHeaderProps {
+  /**
+   * Date to display. Defaults to current date if not provided.
+   */
+  date?: Date;
+  /**
+   * Number of tasks to display. Defaults to 0 if not provided.
+   */
+  taskCount?: number;
+}
 
+/**
+ * DateHeader component displays the current date and task count
+ * in the format "Thursday, 10th" and "December" with task count.
+ */
+export const DateHeader: React.FC<DateHeaderProps> = ({ 
+  date = new Date(),
+  taskCount = 0
+}) => {
   // Format the date like "Thursday, 10th" and "December"
-  const dayName = today.toLocaleDateString('en-US', { weekday: 'long' });
-  const day = today.getDate();
-  const month = today.toLocaleDateString('en-US', { month: 'long' });
+  const dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
+  const day = date.getDate();
+  const month = date.toLocaleDateString('en-US', { month: 'long' });
   
   // Add ordinal suffix to day (1st, 2nd, 3rd, etc.)
   const getOrdinalSuffix = (d: number) => {
@@ -23,7 +39,6 @@ export const DateHeader = () => {
   };
 
   const formattedDay = `${day}${getOrdinalSuffix(day)}`;
-  const totalTasks = todos.length;
 
   return (
     <div>
@@ -31,9 +46,7 @@ export const DateHeader = () => {
         <h1 className="text-2xl font-semibold text-gray-800">
           {dayName}, <span className="text-gray-700">{formattedDay}</span>
         </h1>
-        <span className="text-gray-500">
-          {totalTasks} Task{totalTasks !== 1 ? 's' : ''}
-        </span>
+        <TaskCountHeader count={taskCount} />
       </div>
       <h2 className="text-lg text-gray-500 font-normal">{month}</h2>
     </div>

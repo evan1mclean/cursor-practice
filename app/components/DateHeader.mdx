@@ -1,0 +1,62 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/blocks';
+import * as DateHeaderStories from '../../stories/DateHeader.stories';
+
+<Meta of={DateHeaderStories} />
+
+# DateHeader Component
+
+The DateHeader component displays the current date in a formatted way along with the number of tasks.
+
+## Overview
+
+The DateHeader component shows:
+- The day of the week (e.g., "Thursday")
+- The day of the month with ordinal suffix (e.g., "10th")
+- The month name (e.g., "December")
+- The total number of tasks (e.g., "12 Tasks")
+
+This component is typically used at the top of the TodoCard to provide context about the current date and task count.
+
+## Examples
+
+### Default
+
+<Canvas of={DateHeaderStories.Default} />
+
+### No Tasks
+
+<Canvas of={DateHeaderStories.NoTasks} />
+
+### Single Task
+
+<Canvas of={DateHeaderStories.SingleTask} />
+
+### Many Tasks
+
+<Canvas of={DateHeaderStories.ManyTasks} />
+
+## Props
+
+<Controls />
+
+## Usage
+
+```tsx
+import { DateHeader } from './components/DateHeader';
+
+// With default values (current date, 0 tasks)
+<DateHeader />
+
+// With custom date and task count
+<DateHeader 
+  date={new Date('2025-03-10')} 
+  taskCount={12} 
+/>
+```
+
+## Design Considerations
+
+- The component uses a larger font size for the day and date to emphasize the current day
+- The month is displayed in a lighter color and smaller font size
+- The task count is aligned to the right for easy visibility
+- The component is responsive and will adjust to different container widths 
