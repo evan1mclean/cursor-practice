@@ -1,0 +1,59 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/blocks';
+import * as TaskDividerStories from '../../stories/TaskDivider.stories';
+
+<Meta of={TaskDividerStories} />
+
+# TaskDivider Component
+
+The TaskDivider component provides a visual separator between tasks.
+
+## Overview
+
+The TaskDivider component is a simple horizontal line that:
+- Creates visual separation between tasks in a list
+- Uses a subtle light gray color to maintain visual hierarchy
+- Can be customized with additional classes
+
+This component is typically used within the TaskList component to separate individual tasks.
+
+## Examples
+
+### Default
+
+<Canvas of={TaskDividerStories.Default} />
+
+### With Content
+
+<Canvas of={TaskDividerStories.WithContent} />
+
+## Props
+
+<Controls />
+
+## Usage
+
+```tsx
+import { TaskDivider } from './components/TaskDivider';
+
+// Basic usage
+<TaskDivider />
+
+// With additional className
+<TaskDivider className="my-3" />
+
+// In a task list
+<div>
+  <TaskItem />
+  <TaskDivider />
+  <TaskItem />
+  <TaskDivider />
+  <TaskItem />
+</div>
+```
+
+## Design Considerations
+
+- The divider uses a light gray color to provide subtle separation without drawing attention
+- The component has appropriate vertical spacing to create visual rhythm
+- The divider spans the full width of its container
+- The component can be customized with additional classes for different styling needs 

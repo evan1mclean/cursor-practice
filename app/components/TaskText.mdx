@@ -1,0 +1,72 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/blocks';
+import * as TaskTextStories from '../../stories/TaskText.stories';
+
+<Meta of={TaskTextStories} />
+
+# TaskText Component
+
+The TaskText component displays the text of a task with support for completed state styling.
+
+## Overview
+
+The TaskText component is responsible for displaying the text content of a task. It:
+- Shows the task text with appropriate styling
+- Applies strikethrough and lighter color when the task is completed
+- Includes a smooth transition animation when toggling between states
+- Can be customized with additional classes
+
+This component is typically used within the TaskItem component to display the task description.
+
+## Examples
+
+### Default (Incomplete Task)
+
+<Canvas of={TaskTextStories.Default} />
+
+### Completed Task
+
+<Canvas of={TaskTextStories.Completed} />
+
+### Long Text
+
+<Canvas of={TaskTextStories.LongText} />
+
+### Long Text (Completed)
+
+<Canvas of={TaskTextStories.LongTextCompleted} />
+
+## Props
+
+<Controls />
+
+## Usage
+
+```tsx
+import { TaskText } from './components/TaskText';
+
+// Basic usage
+<TaskText 
+  text="Buy groceries" 
+  completed={false} 
+/>
+
+// Completed task
+<TaskText 
+  text="Morning Run" 
+  completed={true} 
+/>
+
+// With additional className
+<TaskText 
+  text="Important meeting" 
+  completed={false} 
+  className="font-semibold" 
+/>
+```
+
+## Design Considerations
+
+- The component uses a base text size with appropriate line height for readability
+- When completed, the text is styled with a strikethrough and lighter color
+- The transition between states is animated for a smoother user experience
+- The component can be customized with additional classes for different styling needs 

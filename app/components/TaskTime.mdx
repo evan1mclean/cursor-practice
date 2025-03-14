@@ -1,0 +1,70 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/blocks';
+import * as TaskTimeStories from '../../stories/TaskTime.stories';
+
+<Meta of={TaskTimeStories} />
+
+# TaskTime Component
+
+The TaskTime component displays the time for a task with proper formatting.
+
+## Overview
+
+The TaskTime component is responsible for displaying the time associated with a task. It:
+- Shows the time with appropriate styling
+- Applies lighter color when the task is completed
+- Includes a smooth transition animation when toggling between states
+- Can be customized with additional classes
+
+This component is typically used within the TaskItem component to display the scheduled time for a task.
+
+## Examples
+
+### Morning Time
+
+<Canvas of={TaskTimeStories.Morning} />
+
+### Morning Time (Completed)
+
+<Canvas of={TaskTimeStories.MorningCompleted} />
+
+### Afternoon Time
+
+<Canvas of={TaskTimeStories.Afternoon} />
+
+### Evening Time
+
+<Canvas of={TaskTimeStories.Evening} />
+
+## Props
+
+<Controls />
+
+## Usage
+
+```tsx
+import { TaskTime } from './components/TaskTime';
+
+// Basic usage
+<TaskTime 
+  time="10:00 AM" 
+/>
+
+// Completed task time
+<TaskTime 
+  time="7:00 AM" 
+  completed={true} 
+/>
+
+// With additional className
+<TaskTime 
+  time="3:30 PM" 
+  className="font-semibold" 
+/>
+```
+
+## Design Considerations
+
+- The component uses a smaller text size for the time to provide visual hierarchy
+- When the associated task is completed, the time is styled with a lighter color
+- The transition between states is animated for a smoother user experience
+- The component can be customized with additional classes for different styling needs 

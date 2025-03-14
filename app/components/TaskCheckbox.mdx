@@ -1,0 +1,65 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/blocks';
+import * as TaskCheckboxStories from '../../stories/TaskCheckbox.stories';
+
+<Meta of={TaskCheckboxStories} />
+
+# TaskCheckbox Component
+
+The TaskCheckbox component provides a custom styled checkbox for tasks with checked and unchecked states and smooth animation.
+
+## Overview
+
+The TaskCheckbox component is a custom-styled checkbox that:
+- Has distinct checked and unchecked visual states
+- Includes a smooth animation when toggling between states
+- Is accessible with proper ARIA attributes
+- Has focus and hover states for better user experience
+
+This component is typically used within the TaskItem component to allow users to mark tasks as complete or incomplete.
+
+## Examples
+
+### Unchecked State
+
+<Canvas of={TaskCheckboxStories.Unchecked} />
+
+### Checked State
+
+<Canvas of={TaskCheckboxStories.Checked} />
+
+### Interactive Example
+
+Try clicking on the checkbox to see the animation:
+
+<Canvas of={TaskCheckboxStories.Interactive} />
+
+## Props
+
+<Controls />
+
+## Usage
+
+```tsx
+import { TaskCheckbox } from './components/TaskCheckbox';
+import { useState } from 'react';
+
+const MyComponent = () => {
+  const [isChecked, setIsChecked] = useState(false);
+  
+  return (
+    <TaskCheckbox 
+      checked={isChecked} 
+      onChange={() => setIsChecked(!isChecked)} 
+    />
+  );
+};
+```
+
+## Design Considerations
+
+- The component uses a circular design with a checkmark icon for better visual appeal
+- When checked, the background changes to the secondary color (coral/salmon) for clear visual feedback
+- The component includes a subtle animation when toggling between states
+- The checkbox is properly sized for touch targets on mobile devices
+- Focus states are included for keyboard navigation
+- The actual checkbox input is visually hidden but remains accessible for screen readers 

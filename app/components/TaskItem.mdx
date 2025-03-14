@@ -1,0 +1,79 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/blocks';
+import * as TaskItemStories from '../../stories/TaskItem.stories';
+
+<Meta of={TaskItemStories} />
+
+# TaskItem Component
+
+The TaskItem component displays a single task with checkbox, text, and optional time.
+
+## Overview
+
+The TaskItem component combines several smaller components to create a complete task item:
+- TaskCheckbox for toggling the completion state
+- TaskText for displaying the task description
+- TaskTime for showing the scheduled time (if provided)
+
+It also includes:
+- Hover and focus states for better user experience
+- Proper spacing and alignment of all elements
+- Truncation for long text to maintain layout
+- Responsive design for different screen sizes
+
+## Examples
+
+### Default Task
+
+<Canvas of={TaskItemStories.Default} />
+
+### Completed Task
+
+<Canvas of={TaskItemStories.Completed} />
+
+### Task Without Time
+
+<Canvas of={TaskItemStories.WithoutTime} />
+
+### Task With Long Text
+
+<Canvas of={TaskItemStories.LongText} />
+
+### Interactive Task
+
+Try clicking on the checkbox to toggle the completion state:
+
+<Canvas of={TaskItemStories.Interactive} />
+
+## Props
+
+<Controls />
+
+## Usage
+
+```tsx
+import { TaskItem } from './components/TaskItem';
+import { useState } from 'react';
+
+const MyComponent = () => {
+  const [completed, setCompleted] = useState(false);
+  
+  return (
+    <TaskItem 
+      text="Buy groceries" 
+      completed={completed}
+      time="10:00 AM"
+      onToggle={() => setCompleted(!completed)}
+    />
+  );
+};
+```
+
+## Design Considerations
+
+- The component uses a flexible layout to accommodate different content lengths
+- The checkbox is positioned on the left for easy access
+- The task text takes up the available space and truncates if necessary
+- The time is positioned on the right for consistent alignment
+- When completed, all elements update their styling to provide visual feedback
+- Hover states are included for better interactivity
+- The component is designed to work within a list of tasks with proper spacing 
