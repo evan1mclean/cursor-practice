@@ -6,6 +6,9 @@ const meta: Meta<typeof AppLayout> = {
   component: AppLayout,
   parameters: {
     layout: 'fullscreen',
+    backgrounds: {
+      default: 'light',
+    },
   },
   tags: ['autodocs'],
 };
@@ -16,9 +19,13 @@ type Story = StoryObj<typeof AppLayout>;
 export const Default: Story = {
   args: {
     children: (
-      <div className="bg-white rounded-xl shadow-card p-card">
-        <h1 className="text-2xl font-semibold text-gray-800">Todo List</h1>
-        <p className="mt-2 text-gray-600">This is a sample content inside the AppLayout.</p>
+      <div className="p-4">
+        <h1 className="text-2xl font-bold mb-4">Page Content</h1>
+        <p className="mb-4">This is the main content area of the application.</p>
+        <div className="bg-white p-6 rounded-lg shadow-sm">
+          <h2 className="text-lg font-semibold mb-2">Content Card</h2>
+          <p>This card demonstrates content within the app layout.</p>
+        </div>
       </div>
     ),
   },

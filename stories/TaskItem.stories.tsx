@@ -7,6 +7,9 @@ const meta: Meta<typeof TaskItem> = {
   component: TaskItem,
   parameters: {
     layout: 'centered',
+    backgrounds: {
+      default: 'light',
+    },
   },
   tags: ['autodocs'],
 };
@@ -17,65 +20,81 @@ type Story = StoryObj<typeof TaskItem>;
 // Static stories
 export const Default: Story = {
   args: {
-    text: 'Buy Pizza on the way to work',
+    text: 'Buy groceries',
     completed: false,
-    time: '8:00 AM',
+    time: '10:00 AM',
     onToggle: () => {},
   },
-  decorators: [
-    (Story) => (
-      <div className="w-full max-w-md bg-white p-4 rounded-lg">
-        <Story />
-      </div>
-    ),
-  ],
+  render: (args) => (
+    <div style={{ 
+      width: '400px',
+      padding: '20px', 
+      backgroundColor: 'white', 
+      borderRadius: '8px',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    }}>
+      <TaskItem {...args} />
+    </div>
+  ),
 };
 
 export const Completed: Story = {
   args: {
-    text: 'Morning Run',
+    text: 'Finish project',
     completed: true,
-    time: '7:00 AM',
+    time: '2:30 PM',
     onToggle: () => {},
   },
-  decorators: [
-    (Story) => (
-      <div className="w-full max-w-md bg-white p-4 rounded-lg">
-        <Story />
-      </div>
-    ),
-  ],
-};
-
-export const WithoutTime: Story = {
-  args: {
-    text: 'Read a book',
-    completed: false,
-    onToggle: () => {},
-  },
-  decorators: [
-    (Story) => (
-      <div className="w-full max-w-md bg-white p-4 rounded-lg">
-        <Story />
-      </div>
-    ),
-  ],
+  render: (args) => (
+    <div style={{ 
+      width: '400px',
+      padding: '20px', 
+      backgroundColor: 'white', 
+      borderRadius: '8px',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    }}>
+      <TaskItem {...args} />
+    </div>
+  ),
 };
 
 export const LongText: Story = {
   args: {
     text: 'This is a very long task description that should be truncated when it exceeds the available space in the container',
     completed: false,
-    time: '10:00 AM',
+    time: '4:45 PM',
     onToggle: () => {},
   },
-  decorators: [
-    (Story) => (
-      <div className="w-full max-w-md bg-white p-4 rounded-lg">
-        <Story />
-      </div>
-    ),
-  ],
+  render: (args) => (
+    <div style={{ 
+      width: '400px',
+      padding: '20px', 
+      backgroundColor: 'white', 
+      borderRadius: '8px',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    }}>
+      <TaskItem {...args} />
+    </div>
+  ),
+};
+
+export const NoTime: Story = {
+  args: {
+    text: 'Task without time',
+    completed: false,
+    onToggle: () => {},
+  },
+  render: (args) => (
+    <div style={{ 
+      width: '400px',
+      padding: '20px', 
+      backgroundColor: 'white', 
+      borderRadius: '8px',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    }}>
+      <TaskItem {...args} />
+    </div>
+  ),
 };
 
 // Interactive story with state
@@ -85,15 +104,25 @@ export const Interactive: Story = {
     const [completed, setCompleted] = useState(false);
     
     return (
-      <div className="w-full max-w-md bg-white p-4 rounded-lg">
+      <div style={{ 
+        width: '400px', 
+        backgroundColor: 'white', 
+        padding: '16px', 
+        borderRadius: '8px',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+      }}>
         <TaskItem 
           text="Click to toggle completion state" 
           completed={completed} 
           time="9:30 AM"
           onToggle={() => setCompleted(!completed)} 
         />
-        <p className="text-sm text-gray-500 mt-4">
-          Click the checkbox or task to toggle its state
+        <p style={{ 
+          fontSize: '14px', 
+          color: '#6B7280', 
+          marginTop: '16px'
+        }}>
+          Click the checkbox to toggle its state
         </p>
       </div>
     );

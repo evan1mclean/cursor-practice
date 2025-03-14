@@ -6,12 +6,66 @@ const meta: Meta<typeof DateHeader> = {
   component: DateHeader,
   parameters: {
     layout: 'centered',
+    backgrounds: {
+      default: 'light',
+    },
   },
   tags: ['autodocs'],
 };
 
 export default meta;
 type Story = StoryObj<typeof DateHeader>;
+
+export const Today: Story = {
+  args: {
+    date: new Date(),
+  },
+  render: (args) => (
+    <div style={{ 
+      width: '400px',
+      padding: '20px', 
+      backgroundColor: 'white', 
+      borderRadius: '8px',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    }}>
+      <DateHeader {...args} />
+    </div>
+  ),
+};
+
+export const Tomorrow: Story = {
+  args: {
+    date: new Date(new Date().setDate(new Date().getDate() + 1)),
+  },
+  render: (args) => (
+    <div style={{ 
+      width: '400px',
+      padding: '20px', 
+      backgroundColor: 'white', 
+      borderRadius: '8px',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    }}>
+      <DateHeader {...args} />
+    </div>
+  ),
+};
+
+export const Yesterday: Story = {
+  args: {
+    date: new Date(new Date().setDate(new Date().getDate() - 1)),
+  },
+  render: (args) => (
+    <div style={{ 
+      width: '400px',
+      padding: '20px', 
+      backgroundColor: 'white', 
+      borderRadius: '8px',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    }}>
+      <DateHeader {...args} />
+    </div>
+  ),
+};
 
 export const Default: Story = {
   args: {

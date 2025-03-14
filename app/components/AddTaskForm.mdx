@@ -1,0 +1,73 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/blocks';
+import * as AddTaskFormStories from '../../stories/AddTaskForm.stories';
+
+<Meta of={AddTaskFormStories} />
+
+# AddTaskForm Component
+
+The AddTaskForm component provides a form for adding new tasks.
+
+## Overview
+
+The AddTaskForm component is a form that:
+- Allows users to enter a task description
+- Provides an optional time input
+- Includes submit and cancel buttons
+- Validates input to ensure a task description is provided
+- Provides visual feedback for form states
+
+This component is typically shown when a user clicks the AddTaskButton to create a new task.
+
+## Examples
+
+### Default
+
+<Canvas of={AddTaskFormStories.Default} />
+
+### Within Card
+
+<Canvas of={AddTaskFormStories.WithinCard} />
+
+## Props
+
+<Controls />
+
+## Usage
+
+```tsx
+import { AddTaskForm } from './components/AddTaskForm';
+import { useState } from 'react';
+
+const MyComponent = () => {
+  const [showForm, setShowForm] = useState(false);
+  
+  const handleAddTask = (text, time) => {
+    console.log(`Adding task: ${text}${time ? ` at ${time}` : ''}`);
+    setShowForm(false);
+  };
+  
+  return (
+    <div>
+      {showForm ? (
+        <AddTaskForm 
+          onAddTask={handleAddTask} 
+          onCancel={() => setShowForm(false)} 
+        />
+      ) : (
+        <button onClick={() => setShowForm(true)}>
+          Show Add Task Form
+        </button>
+      )}
+    </div>
+  );
+};
+```
+
+## Design Considerations
+
+- The form uses a clean, simple layout for ease of use
+- Input fields have proper focus states and validation
+- The submit button is disabled until a valid task description is entered
+- The form includes a cancel button to allow users to exit without adding a task
+- The time input is optional, with a helper text explaining the format
+- The form uses the secondary color for the submit button to match the design system 

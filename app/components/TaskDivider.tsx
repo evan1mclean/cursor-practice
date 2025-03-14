@@ -16,7 +16,14 @@ export const TaskDivider: React.FC<TaskDividerProps> = ({
   className = '',
 }) => {
   return (
-    <div className={`h-px bg-gray-100 w-full my-2 ${className}`} />
+    <div 
+      className={`w-full ${className}`} 
+      style={{ 
+        borderTop: '1px solid #F3F4F6',
+        marginTop: '0.5rem',
+        marginBottom: '0.5rem'
+      }}
+    />
   );
 };
 

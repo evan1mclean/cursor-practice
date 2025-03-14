@@ -28,13 +28,21 @@ export const TaskText: React.FC<TaskTextProps> = ({
   return (
     <span 
       className={`
-        text-base transition-all duration-300 ease-in-out
+        transition-all duration-300 ease-in-out
         ${completed 
           ? 'text-gray-400 line-through' 
           : 'text-gray-800'
         }
         ${className}
       `}
+      style={{
+        fontSize: '1.125rem',
+        color: completed ? '#9CA3AF' : '#374151',
+        textDecoration: completed ? 'line-through' : 'none',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
+      }}
     >
       {text}
     </span>

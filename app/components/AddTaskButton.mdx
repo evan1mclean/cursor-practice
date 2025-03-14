@@ -1,0 +1,67 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/blocks';
+import * as AddTaskButtonStories from '../../stories/AddTaskButton.stories';
+
+<Meta of={AddTaskButtonStories} />
+
+# AddTaskButton Component
+
+The AddTaskButton component provides a floating action button with a plus icon for adding new tasks.
+
+## Overview
+
+The AddTaskButton component is a circular button that:
+- Uses the secondary color (coral/salmon) from the design system
+- Includes a plus icon to indicate the action
+- Has hover, focus, and active states for better user experience
+- Includes proper shadow for elevation
+- Is accessible with proper ARIA attributes
+
+This component is typically positioned in the bottom-right corner of the TodoCard to allow users to add new tasks.
+
+## Examples
+
+### Default
+
+<Canvas of={AddTaskButtonStories.Default} />
+
+### With Position
+
+<Canvas of={AddTaskButtonStories.WithPosition} />
+
+### In Context
+
+<Canvas of={AddTaskButtonStories.InContext} />
+
+## Props
+
+<Controls />
+
+## Usage
+
+```tsx
+import { AddTaskButton } from './components/AddTaskButton';
+
+// Basic usage
+<AddTaskButton 
+  onClick={() => console.log('Add task button clicked')} 
+/>
+
+// With positioning
+<div className="relative">
+  {/* Other content */}
+  <div className="absolute bottom-4 right-4">
+    <AddTaskButton 
+      onClick={() => setShowAddTaskForm(true)} 
+    />
+  </div>
+</div>
+```
+
+## Design Considerations
+
+- The button uses a circular shape with the secondary color for visual emphasis
+- The plus icon clearly communicates the action of adding something new
+- The button has appropriate size for touch targets on mobile devices
+- Hover and active states provide visual feedback to the user
+- The shadow helps create a sense of elevation above the content
+- The button is positioned in a consistent location for easy access 

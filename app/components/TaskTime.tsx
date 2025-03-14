@@ -31,10 +31,15 @@ export const TaskTime: React.FC<TaskTimeProps> = ({
   return (
     <span 
       className={`
-        text-sm transition-all duration-300 ease-in-out
+        transition-all duration-300 ease-in-out ml-auto
         ${completed ? 'text-gray-400' : 'text-gray-500'}
         ${className}
       `}
+      style={{
+        fontSize: '1.125rem',
+        color: completed ? '#9CA3AF' : '#6B7280',
+        marginLeft: 'auto'
+      }}
     >
       {time}
     </span>

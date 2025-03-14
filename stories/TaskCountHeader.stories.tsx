@@ -6,6 +6,9 @@ const meta: Meta<typeof TaskCountHeader> = {
   component: TaskCountHeader,
   parameters: {
     layout: 'centered',
+    backgrounds: {
+      default: 'light',
+    },
   },
   tags: ['autodocs'],
 };
@@ -17,18 +20,51 @@ export const NoTasks: Story = {
   args: {
     count: 0,
   },
+  render: (args) => (
+    <div style={{ 
+      width: '400px',
+      padding: '20px', 
+      backgroundColor: 'white', 
+      borderRadius: '8px',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    }}>
+      <TaskCountHeader {...args} />
+    </div>
+  ),
 };
 
-export const SingleTask: Story = {
+export const OneTask: Story = {
   args: {
     count: 1,
   },
+  render: (args) => (
+    <div style={{ 
+      width: '400px',
+      padding: '20px', 
+      backgroundColor: 'white', 
+      borderRadius: '8px',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    }}>
+      <TaskCountHeader {...args} />
+    </div>
+  ),
 };
 
 export const MultipleTasks: Story = {
   args: {
-    count: 12,
+    count: 5,
   },
+  render: (args) => (
+    <div style={{ 
+      width: '400px',
+      padding: '20px', 
+      backgroundColor: 'white', 
+      borderRadius: '8px',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    }}>
+      <TaskCountHeader {...args} />
+    </div>
+  ),
 };
 
 export const ManyTasks: Story = {

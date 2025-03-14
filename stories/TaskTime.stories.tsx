@@ -6,6 +6,9 @@ const meta: Meta<typeof TaskTime> = {
   component: TaskTime,
   parameters: {
     layout: 'centered',
+    backgrounds: {
+      default: 'light',
+    },
   },
   tags: ['autodocs'],
 };
@@ -18,6 +21,16 @@ export const Morning: Story = {
     time: '7:00 AM',
     completed: false,
   },
+  render: (args) => (
+    <div style={{ 
+      padding: '20px', 
+      backgroundColor: 'white', 
+      borderRadius: '8px',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    }}>
+      <TaskTime {...args} />
+    </div>
+  ),
 };
 
 export const MorningCompleted: Story = {
@@ -25,6 +38,16 @@ export const MorningCompleted: Story = {
     time: '7:00 AM',
     completed: true,
   },
+  render: (args) => (
+    <div style={{ 
+      padding: '20px', 
+      backgroundColor: 'white', 
+      borderRadius: '8px',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    }}>
+      <TaskTime {...args} />
+    </div>
+  ),
 };
 
 export const Afternoon: Story = {
@@ -32,6 +55,16 @@ export const Afternoon: Story = {
     time: '12:00 PM',
     completed: false,
   },
+  render: (args) => (
+    <div style={{ 
+      padding: '20px', 
+      backgroundColor: 'white', 
+      borderRadius: '8px',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    }}>
+      <TaskTime {...args} />
+    </div>
+  ),
 };
 
 export const Evening: Story = {
@@ -39,4 +72,14 @@ export const Evening: Story = {
     time: '8:30 PM',
     completed: false,
   },
+  render: (args) => (
+    <div style={{ 
+      padding: '20px', 
+      backgroundColor: 'white', 
+      borderRadius: '8px',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    }}>
+      <TaskTime {...args} />
+    </div>
+  ),
 }; 

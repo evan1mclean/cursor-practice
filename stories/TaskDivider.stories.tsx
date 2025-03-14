@@ -6,6 +6,9 @@ const meta: Meta<typeof TaskDivider> = {
   component: TaskDivider,
   parameters: {
     layout: 'centered',
+    backgrounds: {
+      default: 'light',
+    },
   },
   tags: ['autodocs'],
 };
@@ -15,24 +18,31 @@ type Story = StoryObj<typeof TaskDivider>;
 
 export const Default: Story = {
   args: {},
-  decorators: [
-    (Story) => (
-      <div className="w-full max-w-md">
-        <Story />
-      </div>
-    ),
-  ],
+  render: (args) => (
+    <div style={{ 
+      width: '400px',
+      padding: '20px', 
+      backgroundColor: 'white', 
+      borderRadius: '8px',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    }}>
+      <TaskDivider {...args} />
+    </div>
+  ),
 };
 
 export const WithContent: Story = {
   args: {},
-  decorators: [
-    (Story) => (
-      <div className="w-full max-w-md">
-        <div className="p-4 bg-white">Task 1</div>
-        <Story />
-        <div className="p-4 bg-white">Task 2</div>
-      </div>
-    ),
-  ],
+  render: (args) => (
+    <div style={{ 
+      width: '400px',
+      backgroundColor: 'white', 
+      borderRadius: '8px',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    }}>
+      <div style={{ padding: '16px', backgroundColor: 'white' }}>Task 1</div>
+      <TaskDivider {...args} />
+      <div style={{ padding: '16px', backgroundColor: 'white' }}>Task 2</div>
+    </div>
+  ),
 }; 
