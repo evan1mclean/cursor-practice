@@ -56,18 +56,34 @@ export const TaskList: React.FC<TaskListProps> = ({
   }
 
   return (
-    <div className={`flex flex-col gap-6 ${className}`}>
+    <div className={className}>
       {tasks.map((task, index) => (
-        <div key={task.id}>
-          <TaskItem
-            text={task.text}
-            completed={task.completed}
-            time={task.time}
-            onToggle={() => onToggleTask(task.id)}
-          />
-          {index < tasks.length - 1 && <TaskDivider />}
+        <div key={task.id} className="task-container">
+          <div className="py-4">
+            <TaskItem
+              text={task.text}
+              completed={task.completed}
+              time={task.time}
+              onToggle={() => onToggleTask(task.id)}
+            />
+          </div>
+          
+          {index < tasks.length - 1 && (
+            <div className="py-4">
+              <TaskDivider />
+            </div>
+          )}
         </div>
       ))}
+
+      <style jsx>{`
+        .task-container {
+          margin-bottom: 12px;
+        }
+        .task-container:last-child {
+          margin-bottom: 0;
+        }
+      `}</style>
     </div>
   );
 };

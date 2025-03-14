@@ -40,25 +40,19 @@ export const TaskItem: React.FC<TaskItemProps> = ({
 }) => {
   return (
     <div 
-      className={`
-        flex items-center transition-colors duration-200 ease-in-out
-        ${className}
-      `}
-      style={{
-        padding: '0.5rem 0'
-      }}
+      className={`flex items-center py-3 ${className}`}
+      style={{ minHeight: '48px' }}
     >
       <TaskCheckbox 
         checked={completed} 
         onChange={onToggle} 
-        className="mr-5"
-        style={{ marginRight: '1.25rem' }}
+        style={{ marginRight: '1.5rem' }}
       />
-      <div className="flex-1 min-w-0 flex items-center">
+      <div className="flex items-center justify-between flex-1 min-w-0">
         <TaskText 
           text={text} 
           completed={completed} 
-          className="block truncate"
+          className="block truncate mr-4"
         />
         {time && (
           <TaskTime 

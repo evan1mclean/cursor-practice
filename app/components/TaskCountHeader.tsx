@@ -11,6 +11,10 @@ interface TaskCountHeaderProps {
    * Optional className for additional styling
    */
   className?: string;
+  /**
+   * Optional style object for additional styling
+   */
+  style?: React.CSSProperties;
 }
 
 /**
@@ -19,10 +23,14 @@ interface TaskCountHeaderProps {
  */
 export const TaskCountHeader: React.FC<TaskCountHeaderProps> = ({ 
   count, 
-  className = '' 
+  className = '',
+  style = {}
 }) => {
   return (
-    <div className={`text-gray-500 text-lg font-normal ${className}`}>
+    <div 
+      className={`text-gray-500 text-lg font-normal ${className}`}
+      style={style}
+    >
       {count} Task{count !== 1 ? 's' : ''}
     </div>
   );

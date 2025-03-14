@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardContent } from './Card';
 import { DateHeader } from './DateHeader';
 import { TaskList, Task } from './TaskList';
-import { AddTaskButton } from './AddTaskButton';
+import { HeaderDivider } from './HeaderDivider';
 
 interface TodoCardProps {
   /**
@@ -49,23 +49,25 @@ export const TodoCard: React.FC<TodoCardProps> = ({
   
   return (
     <Card className={className}>
-      <CardHeader>
+      <CardHeader className="pb-4 border-2 border-red-500">
         <DateHeader 
           date={today}
           taskCount={tasks.length}
         />
       </CardHeader>
-      <CardContent>
+      
+      {/* Header divider with add task button */}
+      <div className="border-2 border-blue-500">
+        <HeaderDivider onAddClick={handleAddTask} />
+      </div>
+      
+      <CardContent className="px-10 pt-4 pb-6 border-2 border-green-500">
         <TaskList 
           tasks={tasks} 
           onToggleTask={handleToggleTask} 
+          className="py-2 border-2 border-yellow-500"
         />
       </CardContent>
-      <div className="relative h-24">
-        <div className="absolute bottom-10 right-10">
-          <AddTaskButton onClick={handleAddTask} />
-        </div>
-      </div>
     </Card>
   );
 };

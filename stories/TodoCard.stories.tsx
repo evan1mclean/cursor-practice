@@ -49,4 +49,22 @@ export const WithTasks: Story = {
       <TodoCard {...args} />
     </div>
   ),
+};
+
+export const DesignExample: Story = {
+  args: {
+    initialTasks: sampleTasks,
+  },
+  render: (args) => (
+    <div style={{ maxWidth: '500px', margin: '0 auto' }}>
+      <TodoCard {...args} />
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'This example showcases the TodoCard with the HeaderDivider component that positions the AddTaskButton on the divider line between the header and content sections.',
+      },
+    },
+  },
 }; 

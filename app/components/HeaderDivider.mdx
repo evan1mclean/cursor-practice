@@ -1,0 +1,64 @@
+# HeaderDivider
+
+The `HeaderDivider` component combines a horizontal divider line with an "Add Task" button positioned on top of it. It's designed to be used as a separator between the header and content sections of the TodoCard.
+
+## Features
+
+- Horizontal divider line with subtle styling
+- Integrated "Add Task" button positioned on the divider
+- Customizable spacing through className prop
+- Callback function for button click events
+
+## Usage
+
+```tsx
+import { HeaderDivider } from './HeaderDivider';
+
+const MyComponent = () => {
+  const handleAddTask = () => {
+    console.log('Add task button clicked');
+    // Open form or modal to add a new task
+  };
+
+  return (
+    <div>
+      <div>Header content</div>
+      <HeaderDivider onAddClick={handleAddTask} />
+      <div>Main content</div>
+    </div>
+  );
+};
+```
+
+## Props
+
+| Prop | Type | Required | Default | Description |
+|------|------|----------|---------|-------------|
+| onAddClick | () => void | Yes | - | Function called when the add button is clicked |
+| className | string | No | '' | Additional CSS classes to apply to the component |
+
+## Design Considerations
+
+The `HeaderDivider` is designed to create a visual separation between sections while also providing an action button that appears to "float" on the dividing line. This creates a clean, modern UI that draws attention to the add functionality without cluttering the interface.
+
+## Examples
+
+### Basic Usage
+
+```tsx
+<HeaderDivider onAddClick={() => console.log('Add clicked')} />
+```
+
+### With Custom Spacing
+
+```tsx
+<HeaderDivider 
+  onAddClick={() => console.log('Add clicked')} 
+  className="my-6"
+/>
+```
+
+## Related Components
+
+- `AddTaskButton` - The button component used within the HeaderDivider
+- `TodoCard` - A component that uses HeaderDivider to separate its header from content 

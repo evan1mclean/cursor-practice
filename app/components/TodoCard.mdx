@@ -12,9 +12,17 @@ The TodoCard component is the main container for the Todo List application. It c
 - Displays the current date with proper formatting
 - Shows the number of tasks
 - Renders a list of tasks with the ability to toggle completion
-- Provides an add button for creating new tasks
+- Includes a HeaderDivider with an AddTaskButton positioned on the divider line
 - Maintains state for tasks within the component
 - Handles task toggling functionality
+
+## Component Structure
+
+The TodoCard is composed of several key components:
+
+1. **CardHeader** - Contains the DateHeader with date and task count
+2. **HeaderDivider** - A divider line with the AddTaskButton positioned on it
+3. **CardContent** - Contains the TaskList with all tasks
 
 ## Usage
 
@@ -48,4 +56,10 @@ A new todo card with no tasks.
 
 A todo card with several tasks, including one completed task.
 
-<Story of={TodoCardStories.WithTasks} /> 
+<Story of={TodoCardStories.WithTasks} />
+
+### Design Example
+
+This example showcases the TodoCard with the HeaderDivider component that positions the AddTaskButton on the divider line between the header and content sections.
+
+<Story of={TodoCardStories.DesignExample} /> 

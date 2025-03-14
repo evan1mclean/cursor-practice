@@ -42,13 +42,37 @@ export const DateHeader: React.FC<DateHeaderProps> = ({
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-1">
-        <h1 className="text-2xl font-semibold text-gray-800">
-          {dayName}, <span className="text-gray-700">{formattedDay}</span>
+      <div className="flex items-center">
+        <h1 
+          className="font-semibold"
+          style={{ 
+            fontSize: '2.25rem', 
+            fontWeight: 600, 
+            color: '#6366F1' 
+          }}
+        >
+          {dayName}, {formattedDay}
         </h1>
-        <TaskCountHeader count={taskCount} />
       </div>
-      <h2 className="text-lg text-gray-500 font-normal">{month}</h2>
+      <div className="flex justify-between items-center">
+        <p 
+          className="mt-1"
+          style={{ 
+            fontSize: '1.25rem', 
+            color: '#9CA3AF', 
+            marginTop: '0.25rem' 
+          }}
+        >
+          {month}
+        </p>
+        <TaskCountHeader 
+          count={taskCount} 
+          style={{ 
+            fontSize: '1.25rem', 
+            color: '#9CA3AF' 
+          }} 
+        />
+      </div>
     </div>
   );
 }; 
