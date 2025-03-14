@@ -1,0 +1,61 @@
+import { Meta, Controls, Story } from '@storybook/blocks';
+import * as TaskListStories from '../../stories/TaskList.stories';
+
+<Meta of={TaskListStories} />
+
+# TaskList
+
+The TaskList component renders a list of tasks with consistent spacing and styling. It handles both the display of multiple tasks and the empty state when no tasks are available.
+
+## Features
+
+- Renders multiple TaskItem components with proper spacing
+- Adds dividers between tasks for visual separation
+- Handles empty state with a helpful message
+- Provides consistent layout for tasks
+- Supports task toggling via callback function
+
+## Usage
+
+```tsx
+import { TaskList } from './components/TaskList';
+
+// Sample tasks
+const tasks = [
+  { id: '1', text: 'Morning Run', completed: true, time: '7:00 AM' },
+  { id: '2', text: 'Buy Pizza on the way to work', completed: false, time: '8:00 AM' },
+];
+
+// In your component
+<TaskList 
+  tasks={tasks}
+  onToggleTask={(taskId) => {
+    // Handle task toggling
+    console.log(`Task ${taskId} toggled`);
+  }}
+/>
+```
+
+## Props
+
+<Controls />
+
+## Examples
+
+### Empty State
+
+When no tasks are provided, the TaskList displays a helpful message.
+
+<Story of={TaskListStories.Empty} />
+
+### Few Tasks
+
+A typical usage with a few tasks.
+
+<Story of={TaskListStories.FewTasks} />
+
+### Many Tasks
+
+The TaskList can handle many tasks while maintaining consistent spacing and layout.
+
+<Story of={TaskListStories.ManyTasks} /> 

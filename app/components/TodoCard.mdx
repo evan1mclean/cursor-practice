@@ -1,0 +1,51 @@
+import { Meta, Controls, Story } from '@storybook/blocks';
+import * as TodoCardStories from '../../stories/TodoCard.stories';
+
+<Meta of={TodoCardStories} />
+
+# TodoCard
+
+The TodoCard component is the main container for the Todo List application. It combines multiple components (DateHeader, TaskList, AddTaskButton) to create a complete todo list card with proper layout and functionality.
+
+## Features
+
+- Displays the current date with proper formatting
+- Shows the number of tasks
+- Renders a list of tasks with the ability to toggle completion
+- Provides an add button for creating new tasks
+- Maintains state for tasks within the component
+- Handles task toggling functionality
+
+## Usage
+
+```tsx
+import { TodoCard } from './components/TodoCard';
+import { Task } from './components/TaskList';
+
+// Sample initial tasks
+const initialTasks: Task[] = [
+  { id: '1', text: 'Morning Run', completed: true, time: '7:00 AM' },
+  { id: '2', text: 'Buy Pizza on the way to work', completed: false, time: '8:00 AM' },
+];
+
+// In your component
+<TodoCard initialTasks={initialTasks} />
+```
+
+## Props
+
+<Controls />
+
+## Examples
+
+### Empty Todo Card
+
+A new todo card with no tasks.
+
+<Story of={TodoCardStories.Empty} />
+
+### Todo Card with Tasks
+
+A todo card with several tasks, including one completed task.
+
+<Story of={TodoCardStories.WithTasks} /> 
